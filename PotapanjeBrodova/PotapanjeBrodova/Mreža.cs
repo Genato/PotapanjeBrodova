@@ -88,7 +88,7 @@ namespace PotapanjeBrodova
             return DajNizoveSlobodnihPolja(duljinaNiza, DajNizBrojeva(Stupaca), DajNizBrojeva(Redaka), (i, j) => polja[j, i]);
         }
 
-        private Polje[,] polja;
+        public Polje[,] polja;
 
         public readonly int Redaka;
         public readonly int Stupaca;

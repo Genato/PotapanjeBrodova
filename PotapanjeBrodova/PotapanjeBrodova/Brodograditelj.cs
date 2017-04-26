@@ -7,23 +7,36 @@ namespace PotapanjeBrodova
 {
     public class Brodograditelj
     {
-        public Flota SložiFlotu(Mreža mreža, IEnumerable<int> duljineBrodova)
+        public Flota SloziFlotu(Mreža mreža, IEnumerable<int> duljinaBrodova)
         {
             Flota flota = new Flota();
-            TerminatorPolja terminator = new TerminatorPolja(mreža);
-            foreach (int i in duljineBrodova)
+            TerminatorPolja termi = new TerminatorPolja(mreža);
+            int pokusaj = 0;
+            for (; pokusaj < brojPokusaja;pokusaj++)
             {
-                var nizovi = mreža.DajNizoveSlobodnihPolja(i);
-                int indeks = slučajni.Next(nizovi.Count());
-                var niz = nizovi.ElementAt(indeks);
-                flota.DodajBrod(niz);
-                terminator.UkloniPolja(niz);
+                bool uspjesnoPostavljeniBrodovi = true;
+                foreach (int i in duljinaBrodova)
+                {
+                    var nizovi = mreža.DajNizoveSlobodnihPolja(i);
+                    if (nizovi.Count() == 0)
+                    {
+                        uspjesnoPostavljeniBrodovi = false;
+                        break;
+                    }
+                    int index = slucajniBrojevi.Next(nizovi.Count());
+                    var niz = nizovi.ElementAt(index);
+                    flota.DodajBrod(niz);
+                    termi.UkloniPolja(niz);
+                }
+                if (uspjesnoPostavljeniBrodovi == true)
+                {
+                    break;
+                }            
             }
-            return flota;
+            return pokusaj < brojPokusaja ? flota : null;
         }
 
-        // TODO: obratiti pažnju na slučaj da se ne mogu svi brodovi složiti
-
-        private Random slučajni = new Random();
+        private int brojPokusaja = 15;
+        private Random slucajniBrojevi = new Random();
     }
 }
