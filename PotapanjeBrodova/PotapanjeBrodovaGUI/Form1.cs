@@ -63,7 +63,7 @@ namespace PotapanjeBrodovaGUI
             poljaPrikaz[redak, stupac] = new PictureBox();
             poljaPrikaz[redak, stupac].Size = velicinaPolja;
             poljaPrikaz[redak, stupac].Location = new Point(xPozicijaPolja, yPozicijaPolja);
-            poljaPrikaz[redak, stupac].BackColor = Color.Black;
+            poljaPrikaz[redak, stupac].BackColor = Color.RoyalBlue;
             poljaPrikaz[redak, stupac].BringToFront();
             poljaPrikaz[redak, stupac].Visible = true;
             glavniPanel.Controls.Add(poljaPrikaz[redak, stupac]);
@@ -119,7 +119,7 @@ namespace PotapanjeBrodovaGUI
                 IEnumerable<Polje> polja = brod.Polja;
                 foreach (Polje polje in polja)
                 {
-                    poljaPrikaz[polje.Redak, polje.Stupac].BackColor = Color.Blue;
+                    poljaPrikaz[polje.Redak, polje.Stupac].BackColor = Color.ForestGreen;
                 }
                  
             }
