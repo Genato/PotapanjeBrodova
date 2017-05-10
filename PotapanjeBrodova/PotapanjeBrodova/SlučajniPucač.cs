@@ -63,7 +63,7 @@ namespace PotapanjeBrodova
         private int najdužiBrod;
         private Random slucajniBroj = new Random();
 
-        public IEnumerable<Polje> Pogođenapolja
+        public IEnumerable<Polje> PogođenaPolja
         {
             get
             {

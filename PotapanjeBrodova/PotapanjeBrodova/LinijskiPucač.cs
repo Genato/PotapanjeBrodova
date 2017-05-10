@@ -7,7 +7,14 @@ namespace PotapanjeBrodova
 {
     public class LinijskiPucač : IPucač
     {
-        public IEnumerable<Polje> Pogođenapolja
+        public LinijskiPucač(Mreža mreža, IEnumerable<Polje> pogođenaPolja, int duljineBrodova)
+        {
+            this.mreža = mreža;
+            this.pogođenaPolja = pogođenaPolja;
+            this.duljineBrodova = duljineBrodova;
+        }
+
+        public IEnumerable<Polje> PogođenaPolja
         {
             get
             {
@@ -24,5 +31,10 @@ namespace PotapanjeBrodova
         {
             throw new NotImplementedException();
         }
+
+        Mreža mreža;
+        IEnumerable<Polje> pogođenaPolja;
+        int duljineBrodova;
+
     }
 }
