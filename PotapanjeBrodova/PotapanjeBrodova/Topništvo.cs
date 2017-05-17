@@ -28,7 +28,9 @@ namespace PotapanjeBrodova
             if (rezultat == RezultatGađanja.Promašaj)
                 return;
 
-            if(rezultat == RezultatGađanja.Pogodak)
+            //pucač.ObradiGađanje(rezultat);
+
+            if (rezultat == RezultatGađanja.Pogodak)
             {
                 switch (TaktikaGađanja)
                 {
@@ -72,6 +74,11 @@ namespace PotapanjeBrodova
         }
 
         public TaktikaGađanja TaktikaGađanja { get; private set; }
+
+        public Polje Gađaj()
+        {
+             return pucač.Gađaj();
+        }
 
         Mreža mreža;
         List<int> duljineBrodova;

@@ -10,46 +10,40 @@ namespace Test
         [TestMethod]
         public void Topništvo_NaPočetkuJeTaktikaNasumična()
         {
-            int redaka = 10;
-            int stupaca = 10;
+            int redaka = 5;
+            int stupaca = 5;
             int[] duljineBrodova = new int[] { 3, 2, 1 };
             Topništvo t = new Topništvo(redaka, stupaca, duljineBrodova);
-
             Assert.AreEqual(TaktikaGađanja.Nasumično, t.TaktikaGađanja);
         }
 
         [TestMethod]
         public void Topništvo_NasumičnaTaktikaNakonPromašajaOstajeNasumična()
         {
-            int redaka = 10;
-            int stupaca = 10;
+            int redaka = 5;
+            int stupaca = 5;
             int[] duljineBrodova = new int[] { 3, 2, 1 };
             Topništvo t = new Topništvo(redaka, stupaca, duljineBrodova);
-
             t.ObradiGađanje(RezultatGađanja.Promašaj);
-
             Assert.AreEqual(TaktikaGađanja.Nasumično, t.TaktikaGađanja);
         }
 
         [TestMethod]
         public void Topništvo_NasumičnaTaktikaNakonPotapanjaOstajeNasumična()
         {
-            int redaka = 10;
-            int stupaca = 10;
+            int redaka = 5;
+            int stupaca = 5;
             int[] duljineBrodova = new int[] { 3, 2, 1 };
             Topništvo t = new Topništvo(redaka, stupaca, duljineBrodova);
-
             t.ObradiGađanje(RezultatGađanja.Potopljen);
-
             Assert.AreEqual(TaktikaGađanja.Nasumično, t.TaktikaGađanja);
         }
 
-
         [TestMethod]
-        public void Topništvo_NakonPrvogPogodtkaTaktikaPrelaziUKružno()
+        public void Topništvo_NakonPrvogPogodkaTaktikaPrelaziUKružnu()
         {
-            int redaka = 10;
-            int stupaca = 10;
+            int redaka = 5;
+            int stupaca = 5;
             int[] duljineBrodova = new int[] { 3, 2, 1 };
             Topništvo t = new Topništvo(redaka, stupaca, duljineBrodova);
             t.ObradiGađanje(RezultatGađanja.Pogodak);
@@ -59,8 +53,8 @@ namespace Test
         [TestMethod]
         public void Topništvo_KružnoGađanjeNakonPromašajaOstajeKružno()
         {
-            int redaka = 10;
-            int stupaca = 10;
+            int redaka = 5;
+            int stupaca = 5;
             int[] duljineBrodova = new int[] { 3, 2, 1 };
             Topništvo t = new Topništvo(redaka, stupaca, duljineBrodova);
             t.ObradiGađanje(RezultatGađanja.Pogodak);
@@ -69,10 +63,10 @@ namespace Test
         }
 
         [TestMethod]
-        public void Topništvo_KružnoGađanjeNakonPogotkaPrelaziLinijsko()
+        public void Topništvo_KružnoGađanjeNakonPogodkaPrelaziULinijsko()
         {
-            int redaka = 10;
-            int stupaca = 10;
+            int redaka = 5;
+            int stupaca = 5;
             int[] duljineBrodova = new int[] { 3, 2, 1 };
             Topništvo t = new Topništvo(redaka, stupaca, duljineBrodova);
             t.ObradiGađanje(RezultatGađanja.Pogodak);
@@ -81,10 +75,10 @@ namespace Test
         }
 
         [TestMethod]
-        public void Topništvo_KružnoGađanjeNakonPotapljanjaPrelaziUasumičo()
+        public void Topništvo_KružnoGađanjeNakonPotonučaPrelaziUNasumično()
         {
-            int redaka = 10;
-            int stupaca = 10;
+            int redaka = 5;
+            int stupaca = 5;
             int[] duljineBrodova = new int[] { 3, 2, 1 };
             Topništvo t = new Topništvo(redaka, stupaca, duljineBrodova);
             t.ObradiGađanje(RezultatGađanja.Pogodak);
@@ -95,8 +89,8 @@ namespace Test
         [TestMethod]
         public void Topništvo_LinijskoGađanjeNakonPromašajaOstajeLinijsko()
         {
-            int redaka = 10;
-            int stupaca = 10;
+            int redaka = 5;
+            int stupaca = 5;
             int[] duljineBrodova = new int[] { 3, 2, 1 };
             Topništvo t = new Topništvo(redaka, stupaca, duljineBrodova);
             t.ObradiGađanje(RezultatGađanja.Pogodak);
@@ -106,10 +100,10 @@ namespace Test
         }
 
         [TestMethod]
-        public void Topništvo_LinijskoGađanjeNakonPootapanjaPostajeNasumično()
+        public void Topništvo_LinijskoGađanjeNakonPotapanjaPostajeNasumično()
         {
-            int redaka = 10;
-            int stupaca = 10;
+            int redaka = 5;
+            int stupaca = 5;
             int[] duljineBrodova = new int[] { 3, 2, 1 };
             Topništvo t = new Topništvo(redaka, stupaca, duljineBrodova);
             t.ObradiGađanje(RezultatGađanja.Pogodak);
